@@ -3,6 +3,7 @@ package org.example.model;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 public class CarDealer {
     private List<Car> cars;
@@ -14,21 +15,10 @@ public class CarDealer {
         customers = new ArrayList<>();
     }
 
-    public CarDealer(CarDealer other) {
-        cars = new ArrayList<>();
-
-        for (Car car : other.cars) {
-            this.cars.add(new Car(car.getBrand(), car.getModel(), car.getYear(), car.getPrice()) {
-                @Override
-                public void printInfo() {
-                    System.out.println("Brand: " +getBrand());
-                    System.out.println("Model: " +getModel());
-                    System.out.println("Year: " +getYear());
-                    System.out.println("Price: " +getPrice());
-                }
-            });
-        }
-    }
+   @Override
+   public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+   }
 
     public List<Car> getCars() {
         return cars;
