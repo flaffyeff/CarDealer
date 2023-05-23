@@ -1,6 +1,6 @@
 package org.example.model;
 
-public abstract class Car {
+public class Car {
     private String model;
     private String brand;
     private int year;
@@ -43,7 +43,11 @@ public abstract class Car {
     public int getPrice() {
         return price;
     }
-    public abstract void printInfo();
+
+    public void printInfo() {
+
+    }
+
     @Override
     public String toString() {
         return brand + " " + model + " (" + year + ") - $" + price;
